@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="tangler.js"></script>
+  </head>
+  <body>
+    <h1>Tangler Class - Scrimpy JS React</h1>
+    <h3 style="position: absolute; bottom:0">Ekymoz 2020&copy;</h3>
+
+    <div>
+      <p class="joke"></p>
+      <button class="rd">Random Chuck Norris Joke</button>
+    </div>
+
+    <div style="margin-top:50px;width:650px;background:#333;color:#fff;border-radius:20px;padding:20px;">
+      let tangler = new Tangler(document.querySelector('.joke'), "Initial value (String, number, ...)")<br/>
+      document.querySelector('.rd').addEventListener('click', async()=>{<br/>
+      &nbsp;&nbsp;let response = await fetch('http://api.icndb.com/jokes/random')<br/>
+      &nbsp;&nbsp;let data = await response.json()<br/>
+      &nbsp;&nbsp;tangler.value = data.value.joke<br/>
+    })<br/><br/>
+      tangler.value = "<span class='resume'></span>"
+    </div>
+
+  </body>
+  <script type="text/javascript">
+    let tangler = new Tangler(document.querySelector('.joke'), "Initial value (String, number, ...)")
+    let resume = new Tangler(document.querySelector('.resume'), "Initial value (String, number, ...)")
+    document.querySelector('.rd').addEventListener('click', async()=>{
+      let response = await fetch('http://api.icndb.com/jokes/random')
+      let data = await response.json()
+      tangler.value = data.value.joke
+      resume.value = data.value.joke
+    })
+  </script>
+</html>
