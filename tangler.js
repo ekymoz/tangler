@@ -3,7 +3,7 @@ class Tangler {
     this._target = target
     if (!value) value = this.targetValue
     this._value = value
-    if (value) this.setState(value)
+    if (value) this.render(value)
   }
 
   get value() {
