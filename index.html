@@ -29,7 +29,7 @@
     let tangler = new Tangler(document.querySelector('.joke'), "Initial value (String, number, ...)")
     let resume = new Tangler(document.querySelector('.resume'), "Initial value (String, number, ...)")
     document.querySelector('.rd').addEventListener('click', async()=>{
-      let response = await fetch('http://api.icndb.com/jokes/random')
+      let response = await fetch('https://api.icndb.com/jokes/random')
       let data = await response.json()
       tangler.value = data.value.joke
       resume.value = data.value.joke
